@@ -1,0 +1,176 @@
+header {
+    border-bottom: 1px solid #888;
+    padding: 10px;
+    background-color: #E6F7D1;
+    position: relative;
+    top: 0;
+    left: 0;
+    transition: all 1s;
+    height: 60px;
+    z-index: 999;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+
+        .logo {
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .right {
+            display: flex;
+            align-items: center;
+            position: relative;
+
+            .icon {
+                display: none ;
+                flex-direction: column;
+                width: 25px;
+                height: 21px;
+                cursor: pointer;
+
+                span {
+                    height: 3px;
+                    position: absolute;
+                    width: 100%;
+                    left: 0;
+                    transition: all 0.3s ease;
+                    background-color: black;
+
+                    &:first-child {
+                        top: 0;
+                    }
+
+                    &:nth-child(2) {
+                        top: 9px;
+                    }
+
+                    &:last-child {
+                        top: 18px;
+                    }
+                }
+
+                &.clicked-icon {
+                    span:first-child {
+                        top: 9px;
+                        transform: rotate(45deg);
+                    }
+
+                    span:nth-child(2) {
+                        opacity: 0;
+                    }
+
+                    span:nth-child(3) {
+                        top: 9px;
+                        transform: rotate(-45deg);
+                    }
+                }
+            }
+
+            .links {
+                display: flex;
+                list-style: none;
+                margin-bottom: 0;
+
+                &>* {
+                    margin: 0 15px;
+                }
+
+                .link {
+                    display: flex;
+                    align-items: center;
+                    font-size: 18px;
+
+                    a {
+                        text-decoration: none;
+                        color: black;
+                        position: relative;
+                        &::before{
+                            content: "";
+                            position: absolute;
+                            top: 100%;
+                            left: 0;
+                            background-color: #396C03;
+                            width: 0;
+                            height: 4px;
+                            transition: 0.5s;
+                            border-radius: 10px;
+                        }
+
+                        &:hover::before{
+                                width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+
+
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    .right {
+        .icon{
+            display: flex !important;
+        }
+        
+        .links {
+            display: none !important;
+            position: absolute;
+            top: calc(100% + 17px);
+            right: 0;
+            flex-direction: column;
+            background-color: #d3d4d2;
+            width: 250px;
+            border-radius: 15px;
+            justify-content: center;
+            align-items: center;
+                padding-left: 0;
+                transition: 0.5s;
+                overflow: hidden;
+                padding: 10px 0;
+                &.clicked-links{
+                    display: flex !important;
+                }
+
+            &>* {
+                margin: 5px 0 !important;
+            }
+
+            li {
+                position: relative;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                transition: 0.2s;
+                cursor: pointer;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 100%;
+                    left: -100%;
+                    width: 0;
+                    width: 100%;
+                    height: 4px;
+                    background-color: green;
+                    transition: 0.5s;
+                }
+                &:hover{
+                    padding: 3px 0;
+                    &::before{
+                        left: 0;
+                    }
+                }
+            }
+
+
+        }
+    }
+}

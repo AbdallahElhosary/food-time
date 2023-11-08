@@ -1,0 +1,39 @@
+.delivery{
+    .box{
+        position: relative;
+        &::before{
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            background-color: rgba($color: #fff9f2, $alpha: 0.6);
+            width: 0px;
+            height: 0px;
+            transition: 0.5s;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        &:hover{
+            &::before{
+                width: 105%;
+                height: 105%;
+            }
+        }
+        svg{
+            font-size: 40px;
+            margin-bottom: 15px;
+            height: 40px;
+        }
+        p{
+            font-size: 20px;
+            line-height: 1.5;
+        }
+        img{
+            height: 40px;
+            width: 30px;
+            margin-bottom: 15px;
+        }
+    }
+}

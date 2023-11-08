@@ -1,0 +1,118 @@
+.home {
+    position: relative;
+    min-height: calc(100vh - 40px);
+    display: flex;
+    align-items: center;
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color: white, $alpha: 0.3);
+        z-index: 0;
+    }
+
+
+    .images {
+
+        .left-tree,
+        .right-tree {
+            position: absolute;
+            top: 50px;
+            width: 150px;
+            z-index: 0;
+
+        }
+
+        .left-tree {
+            left: 30px;
+        }
+
+        .right-tree {
+
+            right: 30px;
+        }
+
+    }
+
+    .left {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        
+        .form{
+            display: flex;
+            input{
+                width: 80%;
+                border: none;
+                outline: none;
+                padding: 0 15px;
+                border-radius: 15px 0 0 15px;
+
+            }
+            button{
+                width: 20%;
+                border-radius: 0 15px 15px 0;
+            }
+
+        }
+    }
+
+    .right {
+        position: relative;
+        z-index: 5;
+
+        .deliverd {
+
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba($color: white, $alpha: 0.8);
+            padding: 10px;
+            border-radius: 10px;
+            z-index: 5;
+
+            div {
+                margin-bottom: 10px;
+                gap: 20px;
+
+                img {
+                    width: 100px;
+                    margin-right: 15px;
+
+                    &:first-child {
+                        width: 30px;
+                    }
+                }
+            }
+
+            p {
+                display: flex;
+                justify-content: center;
+                margin-bottom: 0;
+            }
+        }
+
+        .dich {
+            width: 100%;
+            animation: dich 7s linear infinite;
+        }
+    }
+}
+
+@keyframes dich {
+
+    0%,
+    100% {
+        transform: translateY(15px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}

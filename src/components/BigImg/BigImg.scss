@@ -1,0 +1,65 @@
+.bigImg {
+    position: relative;
+
+    img {
+        width: 100%;
+    }
+
+    .text {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        color: white;
+        width: 80%;
+        text-align: center;
+
+        &>* {
+            margin-bottom: 10px;
+        }
+
+        h4 {
+            font-size: 40px;
+
+            @media (max-width:991px) {
+                font-size: 30px;
+            }
+
+            @media (max-width:787px) {
+                font-size: 25px;
+            }
+        }
+
+        p {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        button {
+            padding: 10px 30px;
+            background-color: #ff8b00;
+            color: white;
+            font-size: 20px;
+            border: none;
+            svg{
+                margin: 0 10px;
+                
+            }
+            &:hover{
+                background-color: rgba($color: #ff8b00, $alpha: 0.8);
+                svg{
+                    animation: arrow 0.5s linear infinite;
+                }
+            }
+        }
+    }
+}
+
+@keyframes arrow {
+    0%,100%{
+        transform: translateX(5px);
+    }
+    50%{
+        transform: translateX(-5px);
+    }
+}
